@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>All Queens Ranking</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>👑 Global Queen Rankings</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="all-queens.html">All Queens</a>
+<a href="countries.html">Countries</a>
+</nav>
+
+<div class="container">
+
+<h2>Complete Ranking</h2>
+
+<table id="queenTable">
+
+<tr>
+<th>Rank</th>
+<th>Queen</th>
+<th>Country</th>
+<th>Season</th>
+<th>PPE</th>
+</tr>
+
+</table>
+
+</div>
+
+<script src="data.js"></script>
+
+<script>
+
+queens.sort((a,b)=> b.ppe - a.ppe)
+
+const table = document.getElementById("queenTable")
+
+queens.forEach((q,index)=>{
+
+let row = table.insertRow()
+
+row.innerHTML = `
+<td>${index+1}</td>
+<td>${q.name}</td>
+<td>${q.country}</td>
+<td>${q.season}</td>
+<td>${q.ppe}</td>
+`
+
+})
+
+</script>
+
+</body>
+</html>
